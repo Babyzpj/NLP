@@ -1,0 +1,9 @@
+2017-05-16 23:34:07.185174: I tensorflow/core/common_runtime/gpu/gpu_device.cc:887] Found device 0 with properties: 
+name: GeForce GTX 1080
+major: 6 minor: 1 memoryClockRate (GHz) 1.7335
+pciBusID 0000:01:00.0
+Total memory: 7.92GiB
+Free memory: 1.63GiB
+2017-05-16 23:34:07.185211: I tensorflow/core/common_runtime/gpu/gpu_device.cc:908] DMA: 0 
+2017-05-16 23:34:07.185217: I tensorflow/core/common_runtime/gpu/gpu_device.cc:918] 0:   Y 
+2017-05-16 23:34:07.185224: I tensorflow/core/common_runtime/gpu/gpu_device.cc:977] Creating TensorFlow device (/gpu:0) -> (device: 0, name: GeForce GTX 1080, pci bus id: 0000:01:00.0)

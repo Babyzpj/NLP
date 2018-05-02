@@ -4,7 +4,7 @@
 #
 # Author: PengjunZhu <1512568691@qq.com>
 #
-# Function: 使用Textrank实现获取文档摘要，并使用评估方法ROUGE-2、ROUGE-3进行评估
+# Function: 使用Textrank实现获取文档摘要，并使用评估方法ROUGE-1、ROUGE-2、ROUGE-3进行评估
 #
 # time: 2018.4.07
 #

@@ -26,7 +26,7 @@ from  scipy import *
 import pandas as pd
 
 #path = '/home/ZPJ/dataset/summary/Ideal_test_data/dataset_ideal_4.txt'
-path = "./Part_III_text_310.txt"
+path = "./Part_II_text.txt"
 
 pathSummary = './machineSummary.txt'
 manchineSummary = open(pathSummary ,"w+")

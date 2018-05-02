@@ -1,5 +1,5 @@
 实验环境：
-python35
+python36
 sklearn
 scipy
 jieba

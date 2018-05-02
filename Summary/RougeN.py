@@ -4,7 +4,7 @@
 #
 # Author: PengjunZhu <pengjun.zhu@qq.com>
 #
-# Function:自动文本摘要评测，主要实现Rouge-1、Rouge-2、Rouge-3
+# Function:自动文本摘要评测，主要实现Rouge-1、Rouge-2、Rouge-3 
 #
 # time:2018.4.07
 #

@@ -1,0 +1,6 @@
+测试集有10662个文档
+用的实验环境：
+python35
+sklearn
+scipy
+jieba

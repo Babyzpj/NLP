@@ -1,0 +1,38 @@
+          TF_IDF
+Rouge_1_ValueList length: 1664.0950000000005 3538
+rouge-1-average = 0.470349067269644
+rouge-2-average = 0.2720573770491822
+rouge-3-average = 0.21259468626342728
+ 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+ Textrank
+数据集：LCSTS_PartII_Text_summary.txt
+Rouge_1_ValueList length: 1461.4110000000044 3538
+rouge-1-average = 0.4130613340870561
+rouge-2-average = 0.2456466930469205
+rouge-3-average = 0.1999502543810079
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+       W2V_Textrank
+数据集：LCSTS_PartII_Text_summary.txt
+Rouge_1_ValueList length: 1401.4030000000057 3538
+rouge-1-average = 0.3961003391746766
+rouge-2-average = 0.19545138496325684
+rouge-3-average = 0.16793725268513413
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	   
+	   W2V_Textrank_m+1  
+数据集：LCSTS_PartII_Text_summary.txt	   
+Rouge_1_ValueList length: 1605.8840000000073 3538
+rouge-1-average = 0.45389598643301504
+rouge-2-average = 0.24760062182023831
+rouge-3-average = 0.2097037874505383
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~	   
+	   W2V_Textrank_m-1
+数据集：LCSTS_PartII_Text_summary.txt	   
+Rouge_1_ValueList length: 1351.863000000004 3538
+rouge-1-average = 0.38209807801017637
+rouge-2-average = 0.19199971735443805
+rouge-3-average = 0.16906444318824332

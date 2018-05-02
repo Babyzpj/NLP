@@ -4,34 +4,24 @@
 #
 # Author: PengjunZhu <1512568691@qq.com>
 #
-# Function:
-#
-# time:
-#
-from sklearn.feature_extraction.text import TfidfVectorizer
-#
-# X_train = ['This is the first document hah.', 'This is the second document.']
-# X_test = ['This is the third document.']
-#
-# vectorizer = TfidfVectorizer()
-#
-# # 用X_train数据来fit
-# vectorizer.fit(X_train)
-#
-# # 得到tfidf的矩阵
-# tfidf_train = vectorizer.transform(X_train)
-#
-# tfidf_test = vectorizer.transform(X_test)
-#
-# sentenceTfidfList = tfidf_test.toarray()[0]
-# print "测试：",sentenceTfidfList
-#
-# averageValue = sum(sentenceTfidfList)/len(sentenceTfidfList)
+# Function: 使用tf-idf实现获取文档摘要，并使用评估方法ROUGE-2、ROUGE-3进行评估
+#      思路：使用IFIDF使用文档中问个句子的权值。然后抽取权值最大的句子作为摘要
+# time: 2018.4.07
 
+
+
+"""
+    具体实现步骤：
+       1、对文档进行分句
+       2、计算每个句子的TF值、IDF值、TF*IDF值
+       3、再跟进IFIDF值对文档排序，抽取前三句作为摘要
+"""
+from sklearn.feature_extraction.text import TfidfVectorizer
 from RougeN import rouge1,rouge2,rouge3
 import jieba
-import chardet
-pathLcsts = './LCSTS_PartII_Text_2.txt'
+
+
+
 def wordTextList(path) :
 
     """
@@ -41,12 +31,17 @@ def wordTextList(path) :
          corpusList: [[句子，...，句子],[文本,...,句子]]  ,句子格式：词 词 词2
          以上是文本的两种不同表现形式
     """
-
     corpusList = []
     curpus = []
+    summaryList = []
+
 
     # 文本
-    for itemText in open(path,'r'):
+    for item in open(path,'r'):
+        itemSummmary = item.split("。")[0]
+        summaryList.append(itemSummmary)
+
+        itemText = "。".join(item.split("。")[1:])
         curpus.append(" ".join(jieba.cut(itemText)))
 
         sentenceList = itemText.strip("").split("。")
@@ -56,9 +51,7 @@ def wordTextList(path) :
             text_sentence.append(" ".join(jieba.cut(itemSentece)))
         corpusList.append(text_sentence)
 
-    # print "列表总长1：", len(curpus)
-    # print "列表总长2：", len(corpusList)
-    return curpus, corpusList
+    return summaryList, curpus, corpusList
 
 
 def getAverageValue(sentence):
@@ -71,18 +64,20 @@ def getAverageValue(sentence):
     averageValue = sum(sentenceTfidfList) / len(sentenceTfidfList)
     return averageValue
 
-def SummaryList():
-	path = './LCSTS_PartII_summary_2.txt'
-	summaryList = []
-	with open(path, "r") as file:
-		for text in file.readlines():
-			text = text.strip().split("。")
-			summaryList.append(text[0])
-		return summaryList
+# def SummaryList(pathSummary):
+# 	summaryList = []
+# 	with open(pathSummary, "r") as file:
+# 		for text in file.readlines():
+# 			text = text.strip().split("。")
+# 			summaryList.append(text[0])
+# 		return summaryList
 
 
 if __name__ == "__main__":
-    curpus, corpusList = wordTextList(pathLcsts)
+
+    path = "./PART_II_summary_text.txt"
+
+    summaryList, curpus, corpusList = wordTextList(path)
 
     vectorizer = TfidfVectorizer()
     vectorizer.fit(curpus)
@@ -91,7 +86,7 @@ if __name__ == "__main__":
     tfidf_train = vectorizer.transform(curpus)
 
     # 读取摘要列表
-    summaryList = SummaryList()
+    # summaryList = SummaryList(pathSummary)
 
     Rouge_1_ValueList = []
     Rouge_2_ValueList = []

@@ -1,0 +1,1 @@
+使用评估函数value_w2v_pagerank.py对人工摘要Part_II__humanSummary.txt和机器摘要machineSummary.txt进行评估

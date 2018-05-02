@@ -1,0 +1,10 @@
+
+w2v_textrank_m+1
+	：测试正向逻辑语义的结果，生成机器摘要machineSummary.txt
+	  然后将其和人工摘要Part_II_humanSummary.txt一块扔进文件夹Value里进行评估
+	  
+
+
+w2v_textrank_m-1
+	：测试逆向逻辑语义的结果，生成机器摘要machineSummary.txt
+	  然后将其和人工摘要Part_II_humanSummary.txt一块扔进文件夹Value里进行评估
